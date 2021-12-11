@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { styled, alpha, makeStyles, createTheme } from '@mui/material/styles';
-import { lightBlue } from '@mui/material/colors';
-import SearchIcon from '@mui/icons-material/Search';
 import { AppBar, Button, Box, Toolbar, Typography, InputBase, MenuItem, Menu, Tooltip, CardMedia, ThemeProvider, Paper } from '@mui/material';
-import { style } from '@mui/system';
 
 const pages = ['Home', 'Pricing'];
 const settings = ['sci-fi books', 'learning books', 'accessories'];
@@ -22,17 +19,6 @@ const Search = styled('div')(({ theme }) => ({
     width: 'auto',
   },
 }));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
@@ -49,8 +35,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-
-
 const bartheme = createTheme({
   typography: {
     "fontFamily": `"Poppins", sans-serif`,
@@ -66,8 +50,6 @@ const bartheme = createTheme({
     }
   }
 });
-
-
 const contenttheme = createTheme({
   typography: {
     "fontFamily": `"Poppins", sans-serif`,
@@ -118,6 +100,7 @@ export default function SearchAppBar() {
     <Paper style={styles.paperContainer} sx={{ pb: 10 }}>
       <Box sx={{ flexGrow: 1 }} >
         <ThemeProvider theme={bartheme}>
+          
           <AppBar position="static">
             <Toolbar>
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
@@ -193,8 +176,8 @@ export default function SearchAppBar() {
           </AppBar>
         </ThemeProvider>
         <ThemeProvider theme={contenttheme}>
-          <Box sx={{ minWidth: 1000, mt: 10, ml: 5, mr: 5, pt: 5, pr: 6, pl: 6, pb: 5, bgcolor: "rgba(160, 160, 160, 0.7)" }}>
-            <Typography variant="h3" component="div" color="text.secondary" gutterBottom>
+          <Box sx={{ minWidth: 1000, mt: 10, ml: 5, mr: 5, pt: 5, pr: 6, pl: 6, pb: 5, bgcolor: "rgba(160, 160, 160, 0.7)", color: 'white' }}>
+            <Typography variant="h3" component="div" gutterBottom>
               Welcome!
             </Typography>
             <Typography sx={{ fontSize: 20 }}>
